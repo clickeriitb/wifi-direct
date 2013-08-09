@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:background="@color/white" android:id="@+id/relativeLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Back" android:id="@+id/button3" android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"></Button>
+        <Button android:layout_height="wrap_content" android:id="@+id/button2" android:text="Import from Question Bank" android:layout_width="300dp" android:layout_above="@+id/button3" android:layout_alignLeft="@+id/button1"></Button>
+        <Button android:layout_height="wrap_content" android:id="@+id/button1" android:text="@string/newques" android:layout_width="300dp" android:layout_centerVertical="true" android:layout_centerHorizontal="true"></Button>
+        <EditText android:hint="Enter title of quiz" android:id="@+id/editText1" android:layout_height="wrap_content" android:layout_width="200dp" android:layout_above="@+id/button1" android:layout_centerHorizontal="true" android:layout_marginBottom="24dp">
+            <requestFocus></requestFocus>
+        </EditText>
+    </RelativeLayout>
+ 

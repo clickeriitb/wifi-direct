@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:fillViewport="true">
+      <LinearLayout  
+      android:layout_height="wrap_content" 
+      android:orientation="vertical" 
+      android:layout_width="fill_parent" 
+      android:id="@+id/header">
+          <TableRow 
+          android:layout_height="wrap_content" 
+          android:layout_width="match_parent" 
+          android:id="@+id/TableRow01">
+              <TextView android:text="Creating A Question" android:textColor="@color/BLUE_SKY2" android:id="@+id/textView8" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:layout_width="match_parent" android:gravity="center_horizontal"></TextView>
+      
+          </TableRow>
+          <TableRow 
+          android:layout_width="match_parent" 
+          android:id="@+id/tableRow3" 
+          android:layout_height="wrap_content">
+              <TextView 
+              android:textColor="@color/BLUE_SKY2" 
+              android:typeface="sans" 
+              android:textStyle="bold" 
+              android:layout_width="80dp" 
+              android:text="SUBJECT" 
+              android:layout_height="wrap_content" 
+              android:id="@+id/textView3"></TextView>
+                 
+              <EditText 
+              android:layout_width="80dp" 
+              android:layout_height="wrap_content" 
+              android:id="@+id/editText3" 
+              android:text="" android:inputType="textCapCharacters"></EditText>
+              
+              <TextView 
+              android:textColor="@color/BLUE_SKY2" 
+              android:typeface="sans" 
+              android:textStyle="bold" 
+              android:layout_height="wrap_content" 
+              android:text="CLASS" 
+              android:layout_width="80dp" 
+              android:id="@+id/textView7"></TextView>
+              
+              <EditText 
+              android:layout_height="wrap_content" 
+              android:text="" 
+              android:layout_width="80dp" 
+              android:id="@+id/editText13" android:inputType="number"></EditText>
+         
+        	</TableRow>
+         
+          <TableRow
+           android:layout_width="match_parent" 
+           android:id="@+id/tableRow7" 
+           android:layout_height="wrap_content">
+              
+              <TextView 
+              android:textColor="@color/BLUE_SKY2" 
+              android:textStyle="bold" 
+              android:layout_height="wrap_content" 
+              android:text="TYPE" 
+              android:layout_width="80dp" 
+              android:typeface="sans" 
+              android:id="@+id/textView5"></TextView>
+              <Spinner android:id="@+id/spinner2" android:layout_width="wrap_content" android:layout_height="wrap_content"></Spinner>
+          </TableRow>
+          <TableRow android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/tableRow5">
+              <TextView android:textColor="@color/BLUE_SKY2" android:typeface="sans" android:textStyle="bold" android:id="@+id/textView4" android:layout_height="wrap_content" android:text="QUESTION" android:layout_width="80dp"></TextView>
+              <EditText android:background="@drawable/tab" android:text="" android:layout_height="40dp" android:layout_width="460dp" android:id="@+id/editText4" android:inputType="textMultiLine"></EditText>
+          </TableRow>
+          <TableRow android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/tableRow1">
+              
+              <TextView android:textColor="@color/BLUE_SKY2" android:typeface="sans" android:textStyle="bold" android:id="@+id/textView6" android:layout_height="wrap_content" android:text="A" android:layout_width="12dp"></TextView>
+              <CheckBox android:text="" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/checkBox1"></CheckBox>
+              <EditText android:text="" android:layout_height="wrap_content" android:layout_width="200dp" android:id="@+id/editText7"></EditText>
+              <EditText android:text="" android:layout_height="match_parent" android:layout_width="50dp" android:id="@+id/editText01" android:visibility="invisible"></EditText>
+              <TextView android:textColor="@color/BLUE_SKY2" android:typeface="sans" android:textStyle="bold" android:id="@+id/textView6" android:layout_height="wrap_content" android:text="B" android:layout_width="12dp"></TextView>
+              <CheckBox android:text="" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/checkBox2"></CheckBox>
+              <EditText android:text="" android:layout_height="wrap_content" android:layout_width="200dp" android:id="@+id/editText8"></EditText>
+              <EditText android:text="" android:layout_height="match_parent" android:layout_width="50dp" android:id="@+id/editText02" android:visibility="invisible"></EditText>
+              <TextView android:textColor="@color/BLUE_SKY2" android:typeface="sans" android:textStyle="bold" android:id="@+id/textView1" android:layout_height="wrap_content" android:text="qid" android:visibility="invisible" android:layout_width="wrap_content"></TextView>
+              <EditText android:text="" android:layout_height="wrap_content" android:layout_width="wrap_content" android:visibility="invisible" android:id="@+id/editText1"></EditText>
+          </TableRow>
+          <TableRow android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/tableRow8">
+              <TextView android:textColor="@color/BLUE_SKY2" android:typeface="sans" android:textStyle="bold"  android:id="@+id/textView6" android:layout_height="wrap_content" android:text="C" android:layout_width="12dp"></TextView>
+              <CheckBox android:text="" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/checkBox3"></CheckBox>
+              <EditText android:text="" android:layout_height="wrap_content" android:layout_width="200dp" android:id="@+id/editText9"></EditText>
+              <EditText android:text="" android:layout_height="match_parent" android:layout_width="50dp" android:id="@+id/editText03" android:visibility="invisible"></EditText>
+              
+              <TextView android:textColor="@color/BLUE_SKY2" android:typeface="sans" android:textStyle="bold" android:id="@+id/textView6" android:layout_height="wrap_content" android:text="D" android:layout_width="12dp"></TextView>
+              <CheckBox android:text="" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/checkBox4"></CheckBox>
+              <EditText android:text="" android:layout_height="wrap_content" android:layout_width="200dp" android:id="@+id/editText10"></EditText>
+         		<EditText android:text="" android:layout_height="match_parent" android:layout_width="50dp" android:id="@+id/editText04" android:visibility="invisible"></EditText>
+              
+          </TableRow>
+          <TableRow android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/tableRow9">
+              <TextView android:textColor="@color/BLUE_SKY2" android:typeface="sans" android:textStyle="bold"  android:id="@+id/textView6" android:layout_height="wrap_content" android:text="E" android:layout_width="12dp"></TextView>
+              <CheckBox android:text="" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/checkBox5"></CheckBox>
+              <EditText android:text="" android:layout_height="wrap_content" android:layout_width="200dp" android:id="@+id/editText11"></EditText>
+              <EditText android:text="" android:layout_height="match_parent" android:layout_width="50dp" android:id="@+id/editText05" android:visibility="invisible"></EditText>
+              
+              <TextView android:textColor="@color/BLUE_SKY2" android:typeface="sans" android:textStyle="bold" android:id="@+id/textView6" android:layout_height="wrap_content" android:text="F" android:layout_width="12dp"></TextView>
+              <CheckBox android:text="" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/checkBox6"></CheckBox>
+              
+             <EditText android:text="" android:layout_height="wrap_content" android:layout_width="200dp" android:id="@+id/editText12"></EditText>
+          <EditText android:text="" android:layout_height="match_parent" android:layout_width="50dp" android:id="@+id/editText06" android:visibility="invisible"></EditText>
+              
+          </TableRow>
+          <TableRow android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/tableRow10">
+                    <Button android:background="@drawable/tab" android:layout_width="100dp" android:layout_height="40dp" android:id="@+id/button1" android:text="NEXT"></Button>
+                    <Button android:background="@drawable/tab" android:layout_width="100dp" android:layout_height="40dp" android:id="@+id/button2" android:text="END"></Button>
+			</TableRow>    
+      </LinearLayout>
+      
+      </ScrollView>

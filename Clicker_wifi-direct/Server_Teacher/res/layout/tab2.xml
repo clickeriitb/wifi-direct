@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/tab2Layout"
+     >
+
+    
+    <LinearLayout 
+         android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:gravity="right">
+        
+   
+    <TextView
+                    android:id="@+id/textmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:textAppearance="?android:attr/textAppearanceLarge" android:textColor="#000000"/>
+
+                <TextView
+                    android:id="@+id/text:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textAppearance="?android:attr/textAppearanceLarge" android:textColor="#000000"/>
+
+                <TextView
+                    android:id="@+id/textsec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:textAppearance="?android:attr/textAppearanceLarge" android:textColor="#000000"/>
+     </LinearLayout>
+     <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/tab2Layout"
+     android:gravity="center">
+     <Button
+            android:id="@+id/startquiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QUIZ"  android:background="@drawable/shape2" android:width="100dp" android:height="30dp"/>
+    </LinearLayout>
+</LinearLayout>

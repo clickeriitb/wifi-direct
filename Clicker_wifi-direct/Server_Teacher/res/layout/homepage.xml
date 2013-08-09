@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	
+	  android:background="@drawable/repeat_bg">
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+
+		<Button
+		    android:id="@+id/btnLogout"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginLeft="600dp"
+		    android:background="@drawable/shape1"
+		    android:text="LOGOUT"
+		    android:width="70dp" />
+
+	</LinearLayout>
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="53dp"
+	    android:background="@layout/header_gradient" >
+
+	    <ImageView
+	        android:id="@+id/imageView1"
+	        android:layout_width="117dp"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/iitb_clicker" />
+
+	    <TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:text="INDIAN INSTITUTE OF TECHNOLOGY,BOMBAY"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    <ImageButton
+	        android:id="@+id/raisehand_signal"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/palm1" android:background="#24b2eb"/>
+
+	    <Button
+	        android:id="@+id/buttonip"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="get My Mac" android:textColor="#ffffff" android:width="75dp" android:background="@drawable/black_button"/>
+
+	</LinearLayout>
+	<TabHost   
+           android:id="@+id/tabHost"
+           android:layout_width="match_parent" 
+           android:layout_height="match_parent"
+          
+           
+           >
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="match_parent" 
+                  android:layout_height="match_parent">
+                  <ScrollView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:fillViewport="true"
+                          android:scrollbars="none">
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="102dp"
+            android:background="#24b2eb"
+            android:clipToPadding="true"
+            android:gravity="center" />
+
+          </ScrollView>
+       
+        <FrameLayout android:id="@android:id/tabcontent"
+                     android:layout_height="match_parent" 
+                     android:layout_width="100dip"
+                     android:layout_weight="1">
+                
+              <include layout="@layout/tab1"/>
+             <include layout="@layout/tab2"/>
+             <include layout="@layout/tab3"/>
+             <include layout="@layout/tab4"/>
+              <include layout="@layout/tab5"/>
+              <include layout="@layout/tab6"/>
+            
+          
+            
+                     
+                 </FrameLayout>
+                 
+    </LinearLayout>
+</TabHost>
+	</LinearLayout>

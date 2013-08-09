@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+    <RelativeLayout android:id="@+id/relativeLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:background="@color/white">
+        <ScrollView android:id="@+id/scrollView1" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TableLayout android:background="@color/white" android:id="@+id/tableLayout1" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentLeft="true" android:layout_width="match_parent">
+ 			           
+                
+      
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow1"></TableRow>
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow2"></TableRow>
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow3"></TableRow>
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow4"></TableRow>
+        </TableLayout>
+        </ScrollView>
+        <Button android:text="Save the questions" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:id="@+id/button2"></Button>
+        <Button android:id="@+id/button1" android:text="Edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@+id/button2" android:layout_alignLeft="@+id/button2" android:layout_alignParentRight="true"></Button>
+            
+    </RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical" 
+	android:id="@+id/tab5Layout">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editText_raise"
+        android:layout_width="539dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/shape2"
+        android:ems="10"
+        android:height="100dp" android:gravity="top">
+
+        <requestFocus />
+    </EditText>
+
+   
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp" android:gravity="center">
+         <Button
+        android:id="@+id/raiseclear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear" android:background="@drawable/shape2" android:height="35dp" android:width="50dp"/>
+        
+          <Button
+        android:id="@+id/raisesend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send" android:gravity="center" android:layout_marginLeft="100dp" android:background="@drawable/shape2" android:height="35dp" android:width="50dp"/>
+         
+
+    </LinearLayout>
+   
+</LinearLayout>

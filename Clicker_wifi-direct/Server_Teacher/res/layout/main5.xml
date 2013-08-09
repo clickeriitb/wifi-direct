@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+    <RelativeLayout android:background="@color/white" android:id="@+id/relativeLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+        <ScrollView android:id="@+id/scrollView1" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TableLayout android:background="@color/white" android:id="@+id/tableLayout1" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentLeft="true" android:layout_width="match_parent">
+ 			           
+                
+      
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow1"></TableRow>
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow2"></TableRow>
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow3"></TableRow>
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow4"></TableRow>
+        </TableLayout>
+        </ScrollView>
+        <Button android:id="@+id/button2" android:text="Save" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:layout_width="60dp"></Button>
+        <Button android:layout_height="wrap_content" android:text="Edit" android:id="@+id/button1" android:layout_alignParentBottom="true" android:layout_toLeftOf="@+id/button2" android:layout_width="60dp"></Button>
+        <Button android:layout_height="wrap_content" android:text="Back" android:id="@+id/button4" android:layout_alignParentBottom="true" android:layout_toLeftOf="@+id/button1" android:layout_width="60dp"></Button>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Send the Quiz" android:id="@+id/button3" android:layout_alignParentBottom="true" android:layout_toLeftOf="@+id/button4"></Button>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Search" android:layout_above="@+id/button2" android:layout_alignParentRight="true" android:id="@+id/button5"></Button>
+        <EditText android:layout_width="100dp" android:layout_height="wrap_content" android:hint="Enter Subject" android:id="@+id/editText2" android:layout_above="@+id/button4" android:layout_toLeftOf="@+id/button4"></EditText>
+        <EditText android:layout_width="80dp" android:layout_height="wrap_content" android:hint="Enter Class" android:id="@+id/editText1" android:layout_above="@+id/button1" android:layout_toLeftOf="@+id/button5">
+            <requestFocus></requestFocus>
+        </EditText>
+            
+    </RelativeLayout>
+
+    

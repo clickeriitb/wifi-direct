@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/repeat_bg"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/start_file_picker_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1mm"
+        android:text="Click here to select" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1mm"
+        android:text="Selected file"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/file_path_text_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1mm"
+        android:text="No file has been selected"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/exportDb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/backupDesc"
+        android:layout_alignRight="@+id/backupDesc"
+        android:layout_below="@+id/backupDesc"
+        android:onClick="exportDb"
+        android:text="Export database" />
+
+    <Button
+        android:id="@+id/importDb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/backupDesc"
+        android:layout_alignRight="@+id/backupDesc"
+        android:layout_below="@+id/impordDesc"
+        android:onClick="importDb"
+        android:text="Import database" />
+
+</LinearLayout>

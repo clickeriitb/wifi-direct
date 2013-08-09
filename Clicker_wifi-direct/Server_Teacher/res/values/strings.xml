@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ChatServerActivity!</string>
+    <string name="app_name">Teacher_Clicker</string>
+    <string name="export_warning">If you already have existing backup at Clicker folder - it will be overwritten! Are you sure?</string>
+    <string name="import_warning">Current database will be overwritten! Are you sure?</string>
+    <string name="newques">Create a new question</string>
+    <string name="newquiz">Create a quiz</string>
+    <string name="nques">Create a New Question</string>
+    <string name="quizbank">Import from Quiz Bank</string>
+    <string name="ext">Import from External Storage</string>
+    <string name="singleans">Single Answer Correct</string>
+    <string name="mcq">Multiple Answer Correct</string>
+    <string name="fill">Fill in the blanks</string>
+    <string name="arrange">Arrange in a order</string>
+    <string name="opt">Numbeb of Options</string>
+    <string name="id">Quiz ID</string>
+    <string name="text">Type the question</string>
+    <string name="type">Type of Question</string>
+    <string name="add">Add option</string>
+    <string name="next">Next</string>
+    <string name="prev">Previous</string>
+    <string name="subj">Subject</string>
+    <string name="wquiz">Import a Quiz</string>
+
+    <string-array name="question_type">
+        <item>Multiple choice, single correct answer</item>
+        <item>Multiple choice, multiple correct answer</item>
+        <item>True/False</item>
+        
+    </string-array>
+
+</resources>

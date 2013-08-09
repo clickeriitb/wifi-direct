@@ -1,0 +1,193 @@
+package com.iitb.clicker;
+
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketException;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class LoginActivity extends Activity implements OnClickListener
+{ static volatile Boolean universe=true;  
+	DatagramSocket socket;
+    DatagramPacket Rpacket;
+    DatagramPacket Spacket;
+	String macAddr;
+	String ServerIp;
+	String ServerMsg="";
+	@Override
+	protected void onCreate(Bundle savedInstanceState) 
+	{
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.login);	
+		Button btnip = (Button)findViewById(R.id.btnip);
+		btnip.setOnClickListener(this);
+		Button btnConnect = (Button)findViewById(R.id.btnConnect);
+		btnConnect.setOnClickListener(this);
+		Button btnExit = (Button)findViewById(R.id.btnExit);
+		btnExit.setOnClickListener(this);
+		
+		
+	     try 
+	     {
+			socket=new DatagramSocket(2000);
+			
+		 }
+	     catch (SocketException e) 
+	     {
+				// TODO Auto-generated catch block
+				Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+		 }
+	        
+		WifiManager wifiMan = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
+  		 WifiInfo wifiInf = wifiMan.getConnectionInfo();
+  		 macAddr = wifiInf.getMacAddress();
+  		 if(macAddr==null)
+  		 {
+       		macAddr="00:00:00:00:00:00";	//setting macAddress if no value is obtained
+  		 }
+  		new Thread(new Runnable() {
+    		public void run() {
+    			while(universe)
+    			{
+    			try {	
+    				byte [] Rdata=new byte[1000];
+    				Rpacket=new DatagramPacket(Rdata,Rdata.length);
+    				socket.receive(Rpacket);
+    				ServerMsg= new String(Rpacket.getData());
+    				ServerMsg=ServerMsg.substring(0, 10);
+    				Log.d("Message from server", ServerMsg);
+    				Message m=new Message();
+    				h.sendMessage(m);
+    			} catch (Exception e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			}
+    			
+    			}
+    		}
+    	}).start();
+       			
+	}
+
+    Handler h=new Handler()
+    {
+    	public void handleMessage(Message msg)
+    	{
+    		TextView loginConnectMsg = (TextView) findViewById(R.id.login_connect);
+    		//Log.d("Message from server", ServerMsg);
+    		    		
+    		if(ServerMsg.equals("Registered")) // checking if macaddress is stored in database
+			{
+    			//Log.i("inside Registered","true");
+				Toast.makeText(LoginActivity.this,"Successfully Logged In", Toast.LENGTH_LONG).show();
+				loginConnectMsg.setText("Successfully Logged In");
+						universe=false;
+						socket.close();
+					//	Bundle bundle = new Bundle();
+						// bundle.putString( "ip",ServerIp);
+						Intent i = new Intent(getApplicationContext(),HomePage.class);	
+					//	i.putExtras(bundle);   
+						startActivity(i);
+						finish();
+					
+			}
+			else if (ServerMsg.equals("UnRegistrd"))
+			{
+				//Log.i("inside Not Registered","true");
+				Toast.makeText(LoginActivity.this,"You are not Registered", Toast.LENGTH_LONG).show();
+				loginConnectMsg.setText("You are not Registered");
+				universe=false;
+				socket.close();
+				Intent i = new Intent(getApplicationContext(),RegisterActivity.class);
+				 Bundle bundle = new Bundle();   
+		         bundle.putString( "ip",ServerIp);
+		         bundle.putString("mac",macAddr);
+		        
+					
+		         
+				
+				try {
+					 socket.close();
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+					}
+				i.putExtras(bundle);   
+				startActivity(i);
+					
+				
+			}
+    		
+    	}
+    };
+  		 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		 SharedPreferences pref=PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+	        ServerIp=pref.getString("ip","null");
+	        TextView loginErrorMsg = (TextView) findViewById(R.id.login_error);	
+	        loginErrorMsg.setText("Ip Address Entered is "+ServerIp);
+	}
+	public void onClick(View v)
+	{
+		switch(v.getId())
+		{
+		case R.id.btnip:
+			Intent i = new Intent(this, IpPreference.class);
+			startActivityForResult(i,1);
+			break;
+		case R.id.btnConnect:
+			try {
+				String Address="("+macAddr; //for identifying as macaddress ( as identifier
+				
+				byte [] Sdata=Address.getBytes();
+				byte [] ip=InetAddress.getByName(ServerIp).getAddress();
+				//byte [] ip={(byte)10,(byte)0,(byte)2,(byte)2};
+				Spacket=new DatagramPacket(Sdata,Sdata.length,InetAddress.getByAddress(ip),5000);
+				socket.send(Spacket);
+				Log.i("mac-send",macAddr);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+			}
+			break;
+		case R.id.btnExit:
+			android.os.Process.killProcess(android.os.Process.myPid());
+		break;
+		}
+		
+	}
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		
+		try {
+			
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+			}
+		
+	}
+}
+
